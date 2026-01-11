@@ -1,0 +1,14 @@
+# docker-compose-glances.yml
+version: '3.8'
+
+services:
+  glances:
+    image: nicolargo/glances:latest
+    container_name: glances-standalone
+    command: glances -w
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - "61208:61208"
+    privileged: true
+    restart: unless-stopped
