@@ -2,7 +2,7 @@ services:
   glances:
     image: nicolargo/glances:latest
     container_name: glances-standalone
-    command: glances --webserver --enable-webui
+    command: glances -w
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     ports:
